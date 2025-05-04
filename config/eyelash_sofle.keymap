@@ -23,7 +23,7 @@
     trigger-period-ms = <16>;
 };
 
-&gresc { keep-mods = <(MOD_RGUI|MOD_LGUI)>; };
+&gresc { keep-mods = <(MOD_LGUI|MOD_LSFT|MOD_RSFT|MOD_RGUI)>; };
 
 / {
     scroll_encoder: scroll_encoder {
@@ -44,6 +44,14 @@
         tapping-term-ms = <125>;
         flavor = "tap-preferred";
         require-prior-idle-ms = <100>;
+    };
+
+    gresc_td: gresc_td {
+        compatible = "zmk,behavior-tap-dance";
+        label = "GRESC_TD";
+        #binding-cells = <0>;
+        tapping-term-ms = <150>;
+        bindings = <&gresc>, <&kp ESC>;
     };
 
     behaviors {
@@ -98,7 +106,7 @@
 
         layer0 {
             bindings = <
-&gresc         &kp N1                  &kp N2                 &kp N3                    &kp N4                &kp N5         &kp UP_ARROW     &kp N6     &kp N7                &kp N8                     &kp N9                 &kp N0                       &kp BACKSPACE
+&gresc_td      &kp N1                  &kp N2                 &kp N3                    &kp N4                &kp N5         &kp UP_ARROW     &kp N6     &kp N7                &kp N8                     &kp N9                 &kp N0                       &kp BACKSPACE
 &kp TAB        &kp Q                   &kp W                  &kp L                     &kp D                 &kp G          &kp DOWN_ARROW   &kp J      &kp F                 &kp O                      &kp U                  &kp SEMI                     &kp BSLH
 &kp BACKSPACE  &HRM_behavior LSHIFT N  &HRM_behavior LCTRL S  &HRM_behavior LEFT_ALT R  &HRM_behavior LGUI T  &kp P          &kp LEFT_ARROW   &kp Y      &HRM_behavior RGUI H  &HRM_behavior RIGHT_ALT E  &HRM_behavior RCTRL I  &HRM_behavior RIGHT_SHIFT A  &kp SQT
 &kp LSHFT      &kp Z                   &kp X                  &kp C                     &kp V                 &kp B          &kp RIGHT_ARROW  &kp K      &kp M                 &kp COMMA                  &kp DOT                &kp FSLH                     &kp RSHFT
