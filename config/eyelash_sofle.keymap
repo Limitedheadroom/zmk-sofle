@@ -25,6 +25,11 @@
 
 &gresc { keep-mods = <(MOD_LGUI|MOD_LSFT|MOD_RSFT|MOD_RGUI)>; };
 
+&mt {
+    tapping-term-ms = <125>;
+    flavor = "balanced";
+};
+
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -33,17 +38,6 @@
 
         tap-ms = <100>;
         label = "mouseScroll";
-    };
-
-    HRM_behavior: HRM_behavior {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HRM_BEHAVIOR";
-        bindings = <&kp>, <&kp>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <125>;
-        flavor = "tap-preferred";
-        require-prior-idle-ms = <100>;
     };
 
     gresc_td: gresc_td {
@@ -106,11 +100,11 @@
 
         layer0 {
             bindings = <
-&gresc_td      &kp N1                  &kp N2                 &kp N3                    &kp N4                &kp N5         &kp UP_ARROW     &kp N6     &kp N7                &kp N8                     &kp N9                 &kp N0                       &kp BACKSPACE
-&kp TAB        &kp Q                   &kp W                  &kp L                     &kp D                 &kp G          &kp DOWN_ARROW   &kp J      &kp F                 &kp O                      &kp U                  &kp SEMI                     &kp BSLH
-&kp BACKSPACE  &HRM_behavior LSHIFT N  &HRM_behavior LCTRL S  &HRM_behavior LEFT_ALT R  &HRM_behavior LGUI T  &kp P          &kp LEFT_ARROW   &kp Y      &HRM_behavior RGUI H  &HRM_behavior RIGHT_ALT E  &HRM_behavior RCTRL I  &HRM_behavior RIGHT_SHIFT A  &kp SQT
-&kp LSHFT      &kp Z                   &kp X                  &kp C                     &kp V                 &kp B          &kp RIGHT_ARROW  &kp K      &kp M                 &kp COMMA                  &kp DOT                &kp FSLH                     &kp RSHFT
-&mo 2          &kp LCTRL               &kp LEFT_ALT           &kp LEFT_GUI              &lt 2 SPACE           &lt 3 ENTER    &kp ENTER        &kp ENTER  &lt 1 SPACE           &key_repeat                &kp RIGHT_SHIFT        &kp DELETE
+&gresc_td      &kp N1        &kp N2        &kp N3          &kp N4       &kp N5         &kp UP_ARROW     &kp N6     &kp N7       &kp N8           &kp N9           &kp N0             &kp BACKSPACE
+&kp TAB        &kp Q         &kp W         &kp L           &kp D        &kp G          &kp DOWN_ARROW   &kp J      &kp F        &kp O            &kp U            &kp SEMI           &kp BSLH
+&kp BACKSPACE  &mt LSHIFT N  &mt LCTRL S   &mt LEFT_ALT R  &mt LGUI T   &kp P          &kp LEFT_ARROW   &kp Y      &mt RGUI H   &mt RIGHT_ALT E  &mt RCTRL I      &mt RIGHT_SHIFT A  &kp SQT
+&kp LSHFT      &kp Z         &kp X         &kp C           &kp V        &kp B          &kp RIGHT_ARROW  &kp K      &kp M        &kp COMMA        &kp DOT          &kp FSLH           &kp RSHFT
+&mo 2          &kp LCTRL     &kp LEFT_ALT  &kp LEFT_GUI    &lt 2 SPACE  &lt 3 ENTER    &kp ENTER        &kp ENTER  &lt 1 SPACE  &key_repeat      &kp RIGHT_SHIFT  &kp DELETE
             >;
 
             sensor-bindings = <&scroll_encoder>;
