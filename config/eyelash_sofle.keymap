@@ -102,7 +102,7 @@
 &kp TAB        &kp Q                   &kp W                  &kp L                     &kp D                 &kp G          &kp DOWN_ARROW   &kp J      &kp F                 &kp O                      &kp U                  &kp SEMI                     &kp BSLH
 &kp BACKSPACE  &HRM_behavior LSHIFT N  &HRM_behavior LCTRL S  &HRM_behavior LEFT_ALT R  &HRM_behavior LGUI T  &kp P          &kp LEFT_ARROW   &kp Y      &HRM_behavior RGUI H  &HRM_behavior RIGHT_ALT E  &HRM_behavior RCTRL I  &HRM_behavior RIGHT_SHIFT A  &kp SQT
 &kp LSHFT      &kp Z                   &kp X                  &kp C                     &kp V                 &kp B          &kp RIGHT_ARROW  &kp K      &kp M                 &kp COMMA                  &kp DOT                &kp FSLH                     &kp RSHFT
-&mo 2          &kp LCTRL               &kp LEFT_ALT           &kp LEFT_GUI              &lt 1 SPACE           &lt 3 ENTER    &kp ENTER        &kp ENTER  &lt 1 SPACE           &key_repeat                &kp RIGHT_SHIFT        &kp DELETE
+&mo 2          &kp LCTRL               &kp LEFT_ALT           &kp LEFT_GUI              &lt 2 SPACE           &lt 3 ENTER    &kp ENTER        &kp ENTER  &lt 1 SPACE           &key_repeat                &kp RIGHT_SHIFT        &kp DELETE
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -155,12 +155,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        L1 {
-            if-layers = <0>;
-            then-layer = <1>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
