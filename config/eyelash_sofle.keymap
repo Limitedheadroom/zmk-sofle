@@ -23,6 +23,9 @@
     trigger-period-ms = <16>;
 };
 
+&gresc {
+};
+
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -85,7 +88,7 @@
 
         layer0 {
             bindings = <
-&kp ESC        &kp N1        &kp N2        &kp N3          &kp N4       &kp N5         &kp UP_ARROW     &kp N6     &kp N7       &kp N8           &kp N9           &kp N0             &kp BACKSPACE
+&gresc         &kp N1        &kp N2        &kp N3          &kp N4       &kp N5         &kp UP_ARROW     &kp N6     &kp N7       &kp N8           &kp N9           &kp N0             &kp BACKSPACE
 &kp TAB        &kp Q         &kp W         &kp L           &kp D        &kp G          &kp DOWN_ARROW   &kp J      &kp F        &kp O            &kp U            &kp SEMI           &kp BSLH
 &kp BACKSPACE  &mt LSHIFT N  &mt LCTRL S   &mt LEFT_ALT R  &mt LGUI T   &kp P          &kp LEFT_ARROW   &kp Y      &mt RGUI H   &mt RIGHT_ALT E  &mt RCTRL I      &mt RIGHT_SHIFT A  &kp SQT
 &kp LSHFT      &kp Z         &kp X         &kp C           &kp V        &kp B          &kp RIGHT_ARROW  &kp K      &kp M        &kp COMMA        &kp DOT          &kp FSLH           &kp RSHFT
