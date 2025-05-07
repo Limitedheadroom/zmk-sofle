@@ -63,7 +63,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', h: '4'}
   - {t: '$$mdi:keyboard-space$$', h: layer1}
   - '&key_repeat'
-  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:alpha-w-box$$
   - $$mdi:backspace-reverse-outline$$
   layer1:
   - {t: '`', s: '~'}
@@ -251,7 +251,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '4'
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
   - {type: held}
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -261,6 +261,7 @@ layers:
   - {t: '-', s: _}
   - {t: '=', s: +}
   '4':
+  - $$mdi:keyboard-esc$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -316,9 +317,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -407,3 +407,5 @@ combos:
   k: {t: A, h: '$$mdi:apple-keyboard-command$$'}
 - p: [51, 37]
   k: {t: A, h: '$$mdi:apple-keyboard-command$$'}
+- p: [55, 54, 0]
+  k: '&M_force_quit'
