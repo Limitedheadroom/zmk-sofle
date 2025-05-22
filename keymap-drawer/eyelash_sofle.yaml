@@ -13,7 +13,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - '&TD_eject'
+  - '&TD_topRight'
   - $$mdi:keyboard-tab$$
   - Q
   - W
@@ -59,9 +59,9 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:keyboard-space$$', h: '2'}
   - {t: '$$mdi:keyboard-return$$', h: '3'}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - Ctl+Alt+Gui+$$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', h: '4'}
-  - {t: '$$mdi:keyboard-space$$', h: layer1}
+  - {t: '$$mdi:apple-keyboard-shift$$', h: '&lt 1'}
   - '&key_repeat'
   - $$mdi:alpha-w-box$$
   - $$mdi:backspace-reverse-outline$$
@@ -126,7 +126,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
