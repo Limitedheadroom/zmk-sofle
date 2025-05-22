@@ -32,6 +32,9 @@
     flavor = "balanced";
 };
 
+&sk {
+};
+
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -50,11 +53,11 @@
         bindings = <&gresc>, <&kp ESC>;
     };
 
-    TD_eject: TD_eject {
+    TD_topRight: TD_topRight {
         compatible = "zmk,behavior-tap-dance";
-        label = "TD_EJECT";
+        label = "TD_TOPRIGHT";
         #binding-cells = <0>;
-        bindings = <&TH_forceQuit 0 ESCAPE>, <&M_ejectAll>;
+        bindings = <&TH_forceQuit 0 ESCAPE>, <&TH_screenEject 0 0>;
     };
 
     TH_forceQuit: TH_forceQuit {
@@ -64,6 +67,24 @@
 
         #binding-cells = <2>;
         tapping-term-ms = <350>;
+    };
+
+    TH_screenEject: TH_screenEject {
+        compatible = "zmk,behavior-hold-tap";
+        label = "TH_SCREENEJECT";
+        bindings = <&M_ejectAll>, <&screensaver>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <300>;
+    };
+
+    TD_layerOrKey: TD_layerOrKey {
+        compatible = "zmk,behavior-hold-tap";
+        label = "TD_LAYERORKEY";
+        bindings = <&lt>, <&sk>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <100>;
     };
 
     behaviors {
@@ -135,12 +156,25 @@
             #binding-cells = <0>;
             bindings =
                 <&kp LG(SPACE)>,
-                <&macro_wait_time 100>,
+                <&macro_wait_time 250>,
                 <&kp E &kp J &kp E &kp C &kp T &kp A &kp L &kp L>,
                 <&macro_wait_time 200>,
                 <&kp ENTER>;
 
             label = "M_EJECTALL";
+        };
+
+        screensaver: screensaver {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LG(SPACE)>,
+                <&macro_wait_time 250>,
+                <&kp S &kp C &kp R &kp E &kp E &kp N &kp S &kp A &kp V &kp E &kp R>,
+                <&macro_wait_time 200>,
+                <&kp ENTER>;
+
+            label = "SCREENSAVER";
         };
     };
 
@@ -149,11 +183,11 @@
 
         layer0 {
             bindings = <
-&gresc_td      &kp N1        &kp N2        &kp N3          &kp N4       &kp N5         &kp UP_ARROW     &kp N6       &kp N7       &kp N8           &kp N9       &kp N0             &TD_eject
-&kp TAB        &kp Q         &kp W         &kp L           &kp D        &kp G          &kp DOWN_ARROW   &kp J        &kp F        &kp O            &kp U        &kp SEMI           &kp BSLH
-&kp BACKSPACE  &mt LSHIFT N  &mt LCTRL S   &mt LEFT_ALT R  &mt LGUI T   &kp P          &kp LEFT_ARROW   &kp Y        &mt RGUI H   &mt RIGHT_ALT E  &mt RCTRL I  &mt RIGHT_SHIFT A  &kp SQT
-&kp LSHFT      &kp Z         &kp X         &kp C           &kp V        &kp B          &kp RIGHT_ARROW  &kp K        &kp M        &kp COMMA        &kp DOT      &kp FSLH           &kp RSHFT
-&mo 2          &kp LCTRL     &kp LEFT_ALT  &kp LEFT_GUI    &lt 2 SPACE  &lt 3 ENTER    &kp ENTER        &lt 4 ENTER  &lt 1 SPACE  &key_repeat      &caps_word   &kp DELETE
+&gresc_td      &kp N1        &kp N2        &kp N3          &kp N4       &kp N5         &kp UP_ARROW           &kp N6       &kp N7                       &kp N8           &kp N9       &kp N0             &TD_topRight
+&kp TAB        &kp Q         &kp W         &kp L           &kp D        &kp G          &kp DOWN_ARROW         &kp J        &kp F                        &kp O            &kp U        &kp SEMI           &kp BSLH
+&kp BACKSPACE  &mt LSHIFT N  &mt LCTRL S   &mt LEFT_ALT R  &mt LGUI T   &kp P          &kp LEFT_ARROW         &kp Y        &mt RGUI H                   &mt RIGHT_ALT E  &mt RCTRL I  &mt RIGHT_SHIFT A  &kp SQT
+&kp LSHFT      &kp Z         &kp X         &kp C           &kp V        &kp B          &kp RIGHT_ARROW        &kp K        &kp M                        &kp COMMA        &kp DOT      &kp FSLH           &kp RSHFT
+&mo 2          &kp LCTRL     &kp LEFT_ALT  &kp LEFT_GUI    &lt 2 SPACE  &lt 3 ENTER    &kp LC(LA(LG(SPACE)))  &lt 4 ENTER  &TD_layerOrKey 1 LEFT_SHIFT  &key_repeat      &caps_word   &kp DELETE
             >;
 
             sensor-bindings = <&scroll_encoder>;
