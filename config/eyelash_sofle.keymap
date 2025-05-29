@@ -28,9 +28,8 @@
 &gresc { keep-mods = <(MOD_LGUI|MOD_LSFT|MOD_RSFT|MOD_RGUI)>; };
 
 &mt {
-    tapping-term-ms = <250>;
+    tapping-term-ms = <165>;
     flavor = "balanced";
-    require-prior-idle-ms = <250>;
 };
 
 &sk {
