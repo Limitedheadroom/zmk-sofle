@@ -32,7 +32,6 @@
     flavor = "tap-unless-interrupted";
     require-prior-idle-ms = <150>;
     hold-trigger-on-release;
-    hold-while-undecided;
 };
 
 &sk {
