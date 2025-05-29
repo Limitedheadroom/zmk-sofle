@@ -29,7 +29,10 @@
 
 &mt {
     tapping-term-ms = <160>;
-    flavor = "balanced";
+    flavor = "tap-unless-interrupted";
+    require-prior-idle-ms = <150>;
+    hold-trigger-on-release;
+    hold-while-undecided;
 };
 
 &sk {
@@ -185,8 +188,8 @@
             bindings = <
 &gresc_td      &kp N1        &kp N2        &kp N3          &kp N4       &kp N5         &kp UP_ARROW           &kp N6                &kp N7       &kp N8           &kp N9       &kp N0             &TD_topRight
 &kp TAB        &kp Q         &kp W         &kp L           &kp D        &kp G          &kp DOWN_ARROW         &kp J                 &kp F        &kp O            &kp U        &kp SEMI           &kp BSLH
-&kp BACKSPACE  &mt LSHIFT N  &mt LCTRL S   &mt LEFT_ALT R  &mt LGUI T   &kp P          &kp LEFT_ARROW         &kp Y                 &mt RGUI H   &mt RIGHT_ALT E  &mt RCTRL I  &mt RIGHT_SHIFT A  &kp SQT
-&kp LSHFT      &kp Z         &kp X         &kp C           &kp V        &kp B          &kp RIGHT_ARROW        &kp K                 &kp M        &kp COMMA        &kp DOT      &kp FSLH           &kp RSHFT
+&kp BACKSPACE  &mt LSHIFT N  &mt LCTRL S   &mt LEFT_ALT R  &mt LGUI T   &kp P          &kp LS(TAB)            &kp Y                 &mt RGUI H   &mt RIGHT_ALT E  &mt RCTRL I  &mt RIGHT_SHIFT A  &kp SQT
+&kp LSHFT      &kp Z         &kp X         &kp C           &kp V        &kp B          &kp TAB                &kp K                 &kp M        &kp COMMA        &kp DOT      &kp FSLH           &kp RSHFT
 &mo 2          &kp LCTRL     &kp LEFT_ALT  &kp LEFT_GUI    &lt 2 SPACE  &lt 3 ENTER    &kp LC(LA(LG(SPACE)))  &mt LEFT_SHIFT ENTER  &lt 1 SPACE  &key_repeat      &caps_word   &kp DELETE
             >;
 
@@ -209,11 +212,11 @@
 
         layer_2 {
             bindings = <
-&trans         &trans     &trans     &trans     &trans     &trans    &mmv MOVE_UP     &trans     &trans        &trans      &trans         &trans        &trans
-&trans         &none      &none      &trans     &trans     &trans    &mmv MOVE_DOWN   &kp PG_UP  &kp LA(LEFT)  &kp UP      &kp LA(RIGHT)  &kp LA(BSPC)  &kp DEL
-&kp BACKSPACE  &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &trans    &mmv MOVE_LEFT   &kp PG_DN  &kp LEFT      &kp DOWN    &kp RIGHT      &none         &kp BSPC
-&trans         &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &mmv MOVE_RIGHT  &trans     &kp HOME      &sys_reset  &kp END        &bootloader   &trans
-&trans         &trans     &trans     &trans     &trans     &trans    &mkp LCLK        &trans     &trans        &trans      &trans         &trans
+&trans         &trans     &trans     &trans     &trans     &trans    &kp UP     &trans     &trans        &trans      &trans         &trans        &trans
+&trans         &none      &none      &trans     &trans     &trans    &kp DOWN   &kp PG_UP  &kp LA(LEFT)  &kp UP      &kp LA(RIGHT)  &kp LA(BSPC)  &kp DEL
+&kp BACKSPACE  &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &trans    &kp LEFT   &kp PG_DN  &kp LEFT      &kp DOWN    &kp RIGHT      &none         &kp BSPC
+&trans         &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &kp RIGHT  &trans     &kp HOME      &sys_reset  &kp END        &bootloader   &trans
+&trans         &trans     &trans     &trans     &trans     &trans    &kp ENTER  &trans     &trans        &trans      &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
@@ -221,11 +224,11 @@
 
         layer_3 {
             bindings = <
-&kp ESC    &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp UP     &kp LS(LT)    &kp N7     &kp N8    &kp N9     &kp LS(PRCNT)  &kp BSPC
-&kp TAB    &trans        &kp HOME    &kp UP         &kp END       &kp PG_UP        &kp DOWN   &kp LS(GT)    &kp N4     &kp N5    &kp N6     &kp FSLH       &kp DEL
-&kp BSPC   &trans        &kp LEFT    &kp DOWN       &kp RIGHT     &kp PG_DN        &kp LEFT   &kp LS(LPAR)  &kp N1     &kp N2    &kp N3     &kp STAR       &trans
-&kp LSHFT  &kp LSHFT     &kp LCTRL   &kp LALT       &kp LGUI      &trans           &kp RIGHT  &kp LS(RPAR)  &kp N0     &kp DOT   &kp RET    &kp PLUS       &kp MINUS
-&trans     &trans        &trans      &trans         &kp SPACE     &trans           &kp RET    &kp RET       &kp SPACE  &kp PLUS  &kp MINUS  &kp EQUAL
+&kp ESC    &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &mmv MOVE_UP     &kp LS(LT)    &kp N7     &kp N8    &kp N9     &kp LS(PRCNT)  &kp BSPC
+&kp TAB    &trans        &kp HOME    &kp UP         &kp END       &kp PG_UP        &mmv MOVE_DOWN   &kp LS(GT)    &kp N4     &kp N5    &kp N6     &kp FSLH       &kp DEL
+&kp BSPC   &trans        &kp LEFT    &kp DOWN       &kp RIGHT     &kp PG_DN        &mmv MOVE_LEFT   &kp LS(LPAR)  &kp N1     &kp N2    &kp N3     &kp STAR       &trans
+&kp LSHFT  &kp LSHFT     &kp LCTRL   &kp LALT       &kp LGUI      &trans           &mmv MOVE_RIGHT  &kp LS(RPAR)  &kp N0     &kp DOT   &kp RET    &kp PLUS       &kp MINUS
+&trans     &trans        &trans      &trans         &kp SPACE     &trans           &mkp LCLK        &kp RET       &kp SPACE  &kp PLUS  &kp MINUS  &kp EQUAL
             >;
         };
 
