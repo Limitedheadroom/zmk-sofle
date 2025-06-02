@@ -203,51 +203,51 @@ layers:
   - Sft+$
   - Sft+%
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - Sft+<
-  - {t: '7', s: '&'}
-  - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - Sft+%
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - HOME
-  - $$mdi:arrow-up-bold$$
-  - END
-  - PG UP
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - Alt+3
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - Sft+>
-  - {t: '4', s: $}
-  - {t: '5', s: '%'}
-  - {t: '6', s: ^}
-  - {t: /, s: '?'}
+  - Sft+<
+  - KP 7
+  - KP 8
+  - KP 9
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-right-bold$$
-  - PG DN
-  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
-  - Sft+(
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
-  - {t: '3', s: '#'}
-  - '*'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - LGUI
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - Sft+)
-  - {t: '0', s: )}
-  - {t: ., s: '>'}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
   - +
   - {t: '-', s: _}
+  - '*'
+  - KP SLASH
+  - '%'
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - Sft+>
+  - KP 4
+  - KP 5
+  - KP 6
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-shift$$
+  - ^
+  - '&'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - KP LEFT PARENTHESIS
+  - KP RIGHT PARENTHESIS
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - Sft+KP 0
+  - KP 1
+  - KP 2
+  - KP 3
+  - KP DOT
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -255,7 +255,7 @@ layers:
   - $$mdi:keyboard-space$$
   - {type: held}
   - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - KP ENTER
   - $$mdi:keyboard-space$$
   - +
   - {t: '-', s: _}
