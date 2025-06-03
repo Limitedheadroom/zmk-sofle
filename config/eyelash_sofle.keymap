@@ -244,7 +244,7 @@
 &trans         &trans     &trans     &trans     &trans     &trans    &kp ENTER  &trans     &trans        &trans      &trans         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         layer_3 {
