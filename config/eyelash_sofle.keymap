@@ -251,7 +251,7 @@
             bindings = <
 &kp ESC    &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &kp LS(DLLR)             &kp LS(PRCNT)               &mmv MOVE_UP     &none                 &none            &none            &none            &none       &kp BSPC
 &kp TAB    &kp EXCL      &kp AT         &kp POUND      &kp DOLLAR               &kp LA(NUMBER_3)            &mmv MOVE_DOWN   &kp LS(LESS_THAN)     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none       &kp DEL
-&kp BSPC   &kp PLUS      &kp MINUS      &kp STAR       &kp KP_SLASH             &kp PERCENT                 &mmv MOVE_LEFT   &kp LS(GREATER_THAN)  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none       &trans
+&kp BSPC   &kp KP_PLUS   &kp KP_MINUS   &kp STAR       &kp KP_SLASH             &kp PERCENT                 &mmv MOVE_LEFT   &kp LS(GREATER_THAN)  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none       &trans
 &kp LSHFT  &kp CARET     &kp AMPERSAND  &none          &kp KP_LEFT_PARENTHESIS  &kp KP_RIGHT_PARENTHESIS    &mmv MOVE_RIGHT  &kp LS(KP_NUMBER_0)   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DOT  &none
 &trans     &trans        &trans         &trans         &kp SPACE                &trans                      &mkp LCLK        &kp KP_ENTER          &kp SPACE        &kp PLUS         &kp MINUS        &kp EQUAL
             >;
