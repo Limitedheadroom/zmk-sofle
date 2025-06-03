@@ -223,8 +223,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:backspace$$', type: backspace}
-  - +
-  - {t: '-', s: _}
+  - KP PLUS
+  - KP MINUS
   - '*'
   - KP SLASH
   - '%'
